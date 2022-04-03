@@ -1,7 +1,7 @@
-import { render } from "react-dom";
+// import { render } from "react-dom";
 import SearchParams from "./SearchParams";
 import { StrictMode, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Details from "./Details";
 import ThemeContext from "./ThemeContext";
 
@@ -10,18 +10,19 @@ const App = () => {
   return (
     <StrictMode>
       <ThemeContext.Provider value={theme}>
-        <BrowserRouter>
-          <header>
-            <Link to="/">Adopt Me!</Link>
-          </header>
-          <Routes>
-            <Route path="/details/:id" element={<Details />} />
-            <Route path="/" element={<SearchParams />} />
-          </Routes>
-        </BrowserRouter>
+        {/* <BrowserRouter> moving this to ClientApp as this only runs on browser(client-side) and not in node(ssr)*/}
+        <header>
+          <Link to="/">Adopt Me!</Link>
+        </header>
+        <Routes>
+          <Route path="/details/:id" element={<Details />} />
+          <Route path="/" element={<SearchParams />} />
+        </Routes>
+        {/* </BrowserRouter> */}
       </ThemeContext.Provider>
     </StrictMode>
   );
 };
 
-render(<App />, document.getElementById("root"));
+// render(<App />, document.getElementById("root")); //moving this to ClientApp for ssr
+export default App;

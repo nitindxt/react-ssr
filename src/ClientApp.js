@@ -2,6 +2,7 @@ import { hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 
+
 const container = document.getElementById("root");
 const element = (
   <BrowserRouter>
@@ -9,5 +10,5 @@ const element = (
   </BrowserRouter>
 );
 // syntax: hydrateRoot(element, container[, options])
-hydrateRoot(element, container);
+hydrateRoot(container, element);
 // Unlike the createRoot method, you don't need a separate root.render() call here.

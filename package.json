@@ -12,7 +12,6 @@
   "author": "Brian Holt <btholt+citr-v7-project@gmail.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@babel/core": "^7.17.8",
     "eslint": "latest",
     "eslint-config-prettier": "latest",
     "eslint-plugin-import": "latest",
@@ -24,8 +23,8 @@
   },
   "dependencies": {
     "express": "^4.17.3",
-    "react": "latest",
-    "react-dom": "latest",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-router-dom": "latest"
   },
   "browserslist": [
@@ -40,10 +39,10 @@
     },
     "backend": {
       "source": "server/index.js",
-      "optimize": "false",
+      "optimize": false,
       "context": "node",
-      "engine": {
-        "node": ">=16"
+      "engines": {
+        "node": ">=17"
       }
     }
   }
